@@ -1,15 +1,15 @@
 // Sample data
 var server_data = {
-  collection :
+  collection :              // Objeto principal. Tiene 4 propiedades
   {
     title : "Movie List",
     type : "movie",
     version : "1.0",
 
-    items : [
+    items : [ //Array de items (2 propiedades)
 	    {
-        href : "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings_(film_series)",
-        data : [
+        href : "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings_(film_series)",  //URL del item
+        data : [ //Array de datos de cada item (con 3 propiedades)
 		      {name : "name", value : "The Lord of the Rings", prompt : "Name"},
           {name : "description", value : "The Lord of the Rings is a film series consisting of three high fantasy adventure films directed by Peter Jackson. They are based on the novel The Lord of the Rings by J. R. R. Tolkien. The films are subtitled The Fellowship of the Ring (2001), The Two Towers (2002) and The Return of the King (2003). They are a New Zealand-American venture produced by WingNut Films and The Saul Zaentz Company and distributed by New Line Cinema.", prompt : "Description"},
 		      {name : "director", value : "Peter Jackson", prompt : "Director"},
@@ -43,6 +43,9 @@ var server_data = {
 var app = new Vue({
   el: '#app',
   data: {
-    col: server_data
+    col: server_data,
+    header: server_data.collection.title,
+    arrayItems: server_data.collection.items,
+    arrayData: server_data.collection.items.data
   }
 });
