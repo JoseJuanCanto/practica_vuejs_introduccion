@@ -36,14 +36,13 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-4" v-for="item in arrayItems"> <!-- Crea un card por cada elemento del array-->
+                    <div class="col-4" v-for="item in col.collection.items"> <!-- Crea un card por cada elemento del array-->
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">                
-                                <dl v-for="elemento in arrayData">       <!-- Crear lista de definición x cada elemento -->
-                                    <dt>{{ elemento.prompt }}</dt>
-                                    <dd>{{ elemento.value }}</dd>
+                                <dl v-for="dato in item.data">       <!-- Crear lista de definición x cada elemento -->
+                                    <dt>{{ dato.prompt }}</dt>
+                                    <dd>{{ dato.value }}</dd>
                                 </dl>
-                                <h5>hola</h5>
                               <a v-bind:href=item.href class="btn btn-primary">Ver</a>
                             </div>
                         </div>

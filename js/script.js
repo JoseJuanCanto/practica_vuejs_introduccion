@@ -45,7 +45,5 @@ var app = new Vue({
   data: {
     col: server_data,
     header: server_data.collection.title,
-    arrayItems: server_data.collection.items,
-    arrayData: server_data.collection.items.data
   }
 });
